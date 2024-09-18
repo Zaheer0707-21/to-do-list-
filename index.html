@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+      <div class="cont1">
+        <div class="main">
+
+    <h1 style="text-align: center;"> student form</h1>
+
+    <table id="tanmain" class="tabmain">
+        
+            <tr>
+                <td> <b>Name</b></td>
+                <td><input id="name" type="text"></td>
+            </tr>
+            <tr>
+                <td> <b>Age</b></td>
+                <td><input id="Age" type="number"></td>
+            </tr>
+            <tr>
+                <td> <b>Gender</b></td>
+                <td> <select id="gender">
+                        <option> Male</option>
+                        <option>Female</option>
+
+                    </select> </td>
+            </tr>
+            </tr>
+            <tr>
+                <td> <b>Course</b></td>
+                <td> <select id="Course">
+                        <option> javascript</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>JAVA</option>
+                        <OPtion>PYTHON</OPtion>
+                    </select> </td>
+            </tr>
+            <tr>
+                <td> <b>E-mail</b></td>
+                <td><input id="mail" type="text"></td>
+            </tr>
+            <tr>
+                <td><button  id="savebtn" onclick="save()">save</button></td>
+                
+            </tr>
+
+        
+    </table>
+    </div>
+    </div>
+    <br>
+    <br> 
+     <div class="cont2">
+        <div class="sub">
+
+    <table class="tabsub" id="tabsub">
+        <tr>
+            <td> <b>Name</b></td> 
+            <td> <b>Age</b></td>
+            <td> <b>Course</b></td>
+            <td> <b>E-mail</b></td>
+            <td> <b>Gender</b></td>
+            <td> <b>Action</b></td>
+           
+            
+            
+        </tr>
+       
+
+
+    </table>
+
+    <script>
+        var Name = document.getElementById("name")
+var Age = document.getElementById("Age")
+var gender = document.getElementById("gender")
+var mail = document.getElementById("mail")
+var course = document.getElementById("course")
+var btn = document.getElementById("savebtn")
+
+var tabsub = document.getElementById("tabsub")
+    
+  
+     //funtion call for saving
+   
+function save() {
+        // creating new elements  in html page 
+         
+           //table row and col
+    var trdata = document.createElement("tr")
+    var tddata = document.createElement("td")
+           // table data
+   
+    var tage = document.createElement("td")
+    var tgender = document.createElement("td")
+    var tcourse = document.createElement("td")
+    var tmail = document.createElement("td")
+    var  taction=document.createElement("td")
+
+
+       //text content .... get the text from the value of input
+
+         tddata.textContent=Name.value
+         tage.textContent=Age.value
+         tcourse.textContent = "javascript"
+         tmail.textContent =mail.value
+         tgender.textContent ="male"
+         taction.innerHTML= "<button onclick=remove(event) class='remove'> DELETE </button>"
+     
+        //append means linking the data to parent data
+    tabsub.append(trdata)
+    trdata.appendChild(tddata)
+    
+    trdata.append(tage)
+    trdata.append(tcourse)
+    trdata.append(tmail)
+    trdata.append(tgender)
+    trdata.append(taction)
+
+
+}
+  function remove(event){
+       event.target.parentElement.parentElement.remove()
+}
+  
+
+
+
+
+      
+    </script>
+
+
+
+</body>
+</div>
+</div>
+
+</html>
